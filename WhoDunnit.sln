@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoDunnit.Android", "WhoDun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoDunnit.iOS", "WhoDunnit\WhoDunnit.iOS\WhoDunnit.iOS.csproj", "{8A9B37D0-FBEB-4D4D-BAE6-C8B191D85B00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoDunnit", "WhoDunnit\WhoDunnit\WhoDunnit.Core.csproj", "{65E8A1B1-26E3-4BC5-A6C0-DA4B80E8409D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhoDunnit", "WhoDunnit\WhoDunnit\WhoDunnit.csproj", "{65E8A1B1-26E3-4BC5-A6C0-DA4B80E8409D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

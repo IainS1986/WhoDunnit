@@ -27,7 +27,7 @@ namespace WhoDunnit.ViewModels
 
         public TestViewModel()
         {
-            Text = "Hello Cluedo!!!";
+            Text = "Hello Cluedo Test ViewModel!!!";
         }
     }
 }

@@ -121,11 +121,11 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\WhoDunnit\WhoDunnit.csproj">
-      <Project>{DD67405C-712C-463C-BC6D-F2FCB180A870}</Project>
+      <Project>{65e8a1b1-26e3-4bc5-a6c0-da4b80e8409d}</Project>
       <Name>WhoDunnit</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
