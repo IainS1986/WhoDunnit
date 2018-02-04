@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using NControl.Droid;
+using NControl.Controls.Droid;
 
 namespace WhoDunnit.Droid
 {
@@ -20,6 +22,8 @@ namespace WhoDunnit.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            NControlViewRenderer.Init();
+            NControls.Init();
             LoadApplication(new App());
         }
     }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using NControl.Controls.iOS;
+using NControl.iOS;
 using UIKit;
 
 namespace WhoDunnit.iOS
@@ -23,6 +25,8 @@ namespace WhoDunnit.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            NControlViewRenderer.Init();
+            NControls.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

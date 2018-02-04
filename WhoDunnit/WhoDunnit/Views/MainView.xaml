@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:WhoDunnit;assembly=WhoDunnit"
+             xmlns:ncontrol="clr-namespace:NControl.Controls;assembly=NControl.Controls"
              x:Class="WhoDunnit.Views.MainView"
              BackgroundColor="White"
              Title="Cluedo">
@@ -10,12 +11,24 @@
                Aspect="AspectFit"
                VerticalOptions="Start"
                HorizontalOptions="FillAndExpand"/>
-        <Label Text="{Binding Text}"
+        <!--Label Text="{Binding Text}"
                VerticalOptions="FillAndExpand"
                HorizontalOptions="FillAndExpand">
             <Label.BindingContext>
                 <local:ViewModels.MainViewModel/>
             </Label.BindingContext>
-        </Label>
+        </-->
+        <ncontrol:ActionButton
+            WidthRequest="100"
+            HeightRequest="100"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="Center"
+            ButtonColor="Crimson"
+            Command="{Binding StartNewGameCommand}"
+            CommandParameter="{Binding}">
+            <ncontrol:ActionButton.BindingContext>
+                <local:ViewModels.MainViewModel/>
+            </ncontrol:ActionButton.BindingContext>
+        </ncontrol:ActionButton>
     </StackLayout>
 </ContentPage>

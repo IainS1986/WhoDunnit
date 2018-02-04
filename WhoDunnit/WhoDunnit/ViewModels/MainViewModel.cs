@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace WhoDunnit.ViewModels
@@ -22,9 +23,22 @@ namespace WhoDunnit.ViewModels
             }
         }
 
+        public ICommand StartNewGameCommand
+        {
+            get;
+            set;
+        }
+
         public MainViewModel()
         {
             Text = "Hello Cluedo Test ViewModel!!!";
+
+            StartNewGameCommand = new Command(OnNewGameStart);
+        }
+
+        public void OnNewGameStart()
+        {
+            Console.WriteLine("Start New Game Flow");
         }
     }
 }
