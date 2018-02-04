@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace WhoDunnit.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TestView : ContentPage
+	public partial class MainView : ContentPage
 	{
-		public TestView ()
+		public MainView ()
 		{
 			InitializeComponent ();
 		}

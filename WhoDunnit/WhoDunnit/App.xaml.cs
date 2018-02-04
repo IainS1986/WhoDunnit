@@ -13,7 +13,7 @@ namespace WhoDunnit
 		{
 			InitializeComponent();
 
-			MainPage = new WhoDunnit.Views.TestView();
+			MainPage = new WhoDunnit.Views.MainView();
 		}
 
 		protected override void OnStart ()

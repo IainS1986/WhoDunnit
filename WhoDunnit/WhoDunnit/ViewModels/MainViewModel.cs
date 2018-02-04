@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace WhoDunnit.ViewModels
 {
-    class TestViewModel : INotifyPropertyChanged
+    class MainViewModel : AppViewModel
     {
         private string m_text = "Test";
         public string Text
@@ -18,14 +18,11 @@ namespace WhoDunnit.ViewModels
             set
             {
                 m_text = value;
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("Text"));
+                RaisePropertyChanged(() => Text);
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public TestViewModel()
+        public MainViewModel()
         {
             Text = "Hello Cluedo Test ViewModel!!!";
         }
