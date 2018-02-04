@@ -9,7 +9,6 @@ using Xamarin.Forms.Xaml;
 
 namespace WhoDunnit.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainView : ContentPage
 	{
 		public MainView ()

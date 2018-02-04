@@ -1,15 +1,21 @@
 ﻿using System;
 
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Prism.DryIoc;
+using DryIoc;
+using Android.Graphics.Drawables;
+using Android.Graphics;
 using NControl.Droid;
 using NControl.Controls.Droid;
 using Prism;
-using System.ComponentModel;
+using Prism.Ioc;
+using WhoDunnit.Views;
 
 namespace WhoDunnit.Droid
 {
@@ -23,7 +29,17 @@ namespace WhoDunnit.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             NControlViewRenderer.Init();
             NControls.Init();
-            LoadApplication(new App());
+            LoadApplication(new App(new AndroidInitializer()));
+
+            if (ActionBar != null)
+                ActionBar.SetIcon(new ColorDrawable(Color.Transparent));
+        }
+
+        public class AndroidInitializer : IPlatformInitializer
+        {
+            public void RegisterTypes(IContainerRegistry containerRegistry)
+            {
+            }
         }
     }
 }

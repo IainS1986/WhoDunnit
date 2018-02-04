@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using Prism.Commands;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +25,13 @@ namespace WhoDunnit.ViewModels
             }
         }
 
+        public DelegateCommand OnNewGameStartCommand { get; private set; }
+
         public MainViewModel(INavigationService navigationService) : base(navigationService)
         {
             Text = "Hello Cluedo Test ViewModel!!!";
+
+            OnNewGameStartCommand = new DelegateCommand(OnNewGameStart);
         }
 
         public void OnNewGameStart()

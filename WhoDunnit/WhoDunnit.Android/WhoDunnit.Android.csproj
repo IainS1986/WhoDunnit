@@ -57,12 +57,15 @@
       <Version>0.9.4.1</Version>
     </PackageReference>
     <PackageReference Include="Prism.Core">
-      <Version>6.3.0</Version>
+      <Version>7.0.0.396</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.DryIoc.Forms">
+      <Version>7.0.0.396</Version>
     </PackageReference>
     <PackageReference Include="Prism.Forms">
-      <Version>6.3.0</Version>
+      <Version>7.0.0.396</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="25.4.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="25.4.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="25.4.0.2" />

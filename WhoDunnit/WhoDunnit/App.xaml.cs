@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Xamarin.Forms;
-using Prism.DryIoc;
-using Prism.Navigation;
+﻿using Prism.DryIoc;
 using DryIoc;
+using Prism.Navigation;
+using Prism;
+using Prism.Ioc;
+using WhoDunnit.Views;
 
 namespace WhoDunnit
 {
@@ -15,12 +13,14 @@ namespace WhoDunnit
         {
         }
 
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+        public App(IPlatformInitializer platformInitializer = null) : base(platformInitializer)
+        {
+        }
 
         protected override void OnInitialized()
         {
             InitializeComponent();
-
+        
             NavigationService.NavigateAsync("MainView");
         }
 
@@ -38,5 +38,10 @@ namespace WhoDunnit
 		{
 			// Handle when your app resumes
 		}
-	}
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<MainView>();
+        }
+    }
 }

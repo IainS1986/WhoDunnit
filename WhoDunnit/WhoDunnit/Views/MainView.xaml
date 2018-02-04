@@ -22,6 +22,6 @@
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="Center"
             ButtonColor="Crimson"
-            Command="{Binding StartNewGameCommand}"/>
+            Command="{Binding OnNewGameStartCommand}"/>
     </StackLayout>
 </ContentPage>
