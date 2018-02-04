@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:WhoDunnit;assembly=WhoDunnit"
              xmlns:ncontrol="clr-namespace:NControl.Controls;assembly=NControl.Controls"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" 
              x:Class="WhoDunnit.Views.MainView"
              BackgroundColor="White"
              Title="Cluedo">
@@ -11,24 +13,15 @@
                Aspect="AspectFit"
                VerticalOptions="Start"
                HorizontalOptions="FillAndExpand"/>
-        <!--Label Text="{Binding Text}"
+        <Label Text="{Binding Text}"
                VerticalOptions="FillAndExpand"
-               HorizontalOptions="FillAndExpand">
-            <Label.BindingContext>
-                <local:ViewModels.MainViewModel/>
-            </Label.BindingContext>
-        </-->
+               HorizontalOptions="FillAndExpand"/>
         <ncontrol:ActionButton
             WidthRequest="100"
             HeightRequest="100"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="Center"
             ButtonColor="Crimson"
-            Command="{Binding StartNewGameCommand}"
-            CommandParameter="{Binding}">
-            <ncontrol:ActionButton.BindingContext>
-                <local:ViewModels.MainViewModel/>
-            </ncontrol:ActionButton.BindingContext>
-        </ncontrol:ActionButton>
+            Command="{Binding StartNewGameCommand}"/>
     </StackLayout>
 </ContentPage>

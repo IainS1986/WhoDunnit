@@ -2,21 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
+using Prism.DryIoc;
+using Prism.Navigation;
+using DryIoc;
 
 namespace WhoDunnit
 {
-	public partial class App : Application
+	public partial class App : PrismApplication
 	{
-		public App ()
-		{
-			InitializeComponent();
+        public App() : base(null)
+        {
+        }
 
-			MainPage = new WhoDunnit.Views.MainView();
-		}
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
-		protected override void OnStart ()
+        protected override void OnInitialized()
+        {
+            InitializeComponent();
+
+            NavigationService.NavigateAsync("MainView");
+        }
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

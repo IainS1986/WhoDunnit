@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using Prism.Navigation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
@@ -8,25 +10,29 @@ using Xamarin.Forms;
 
 namespace WhoDunnit.ViewModels
 {
-    class AppViewModel : INotifyPropertyChanged
+    class AppViewModel : BindableBase, INavigationAware
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged<T>(Expression<Func<T>> property)
+        private readonly INavigationService m_navigationService;
+        protected INavigationService NavigationService
         {
-            var info = property.GetMemberInfo();
-
-            if (info == null)
-                throw new NotSupportedException("Invalid property passed to RaisePropertyChanged(), " + property.ToString());
-
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(info.Name));
+            get { return m_navigationService; }
         }
 
-        protected void RaisePropertyChanged(string property)
+        public AppViewModel(INavigationService navigationService)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            m_navigationService = navigationService;
+        }
+
+        public virtual void OnNavigatedFrom(NavigationParameters parameters)
+        {
+        }
+
+        public virtual void OnNavigatedTo(NavigationParameters parameters)
+        {
+        }
+
+        public virtual void OnNavigatingTo(NavigationParameters parameters)
+        {
         }
     }
 }

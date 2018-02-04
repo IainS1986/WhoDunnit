@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Navigation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -19,21 +20,13 @@ namespace WhoDunnit.ViewModels
             set
             {
                 m_text = value;
-                RaisePropertyChanged(() => Text);
+                RaisePropertyChanged("Text");
             }
         }
 
-        public ICommand StartNewGameCommand
-        {
-            get;
-            set;
-        }
-
-        public MainViewModel()
+        public MainViewModel(INavigationService navigationService) : base(navigationService)
         {
             Text = "Hello Cluedo Test ViewModel!!!";
-
-            StartNewGameCommand = new Command(OnNewGameStart);
         }
 
         public void OnNewGameStart()
