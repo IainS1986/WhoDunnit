@@ -11,16 +11,21 @@ namespace WhoDunnit.ViewModels
 {
     class MainViewModel : AppViewModel
     {
+        private readonly INavigationService m_navigationService;
+
         public DelegateCommand OnNewGameStartCommand { get; private set; }
 
         public MainViewModel(INavigationService navigationService) : base(navigationService)
         {
+            m_navigationService = navigationService;
+
             OnNewGameStartCommand = new DelegateCommand(OnNewGameStart);
         }
 
-        public void OnNewGameStart()
+        public async void OnNewGameStart()
         {
-            Console.WriteLine("Start New Game Flow");
+            await m_navigationService.NavigateAsync("PlayerSelectionView");
         }
+        
     }
 }

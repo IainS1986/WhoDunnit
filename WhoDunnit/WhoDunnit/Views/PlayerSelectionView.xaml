@@ -5,7 +5,7 @@
              xmlns:ncontrol="clr-namespace:NControl.Controls;assembly=NControl.Controls"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True" 
-             x:Class="WhoDunnit.Views.MainView"
+             x:Class="WhoDunnit.Views.PlayerSelectionView"
              BackgroundColor="White"
              Title="Cluedo">
     <Grid>
@@ -15,34 +15,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Image x:Name="Background" 
-            Grid.Column="0"
+        <Image Grid.Column="0"
             Grid.Row="0"
             Source="Background.jpg"
             Aspect="AspectFill"
             VerticalOptions="Fill"
             HorizontalOptions="Fill"/>
-        <StackLayout 
-            Grid.Column="0"
-            Grid.Row="0"
-            VerticalOptions="Fill"
-            HorizontalOptions="Fill"
-            Padding="10,50,10,50">
-            <Image x:Name="Logo" 
-                Source="Logo.png"
-                Aspect="AspectFit"
-                VerticalOptions="Start" 
-                HorizontalOptions="Fill"/>
-            <Frame
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand"/>
-            <ncontrol:ActionButton
-                x:Name="NewGameButton"
-                WidthRequest="100"
-                HeightRequest="100"
-                VerticalOptions="End"
-                HorizontalOptions="Center"
-                ButtonColor="Crimson"/>
-        </StackLayout>
     </Grid>
 </ContentPage>

@@ -42,6 +42,7 @@ namespace WhoDunnit
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<MainView>();
+            containerRegistry.RegisterForNavigation<PlayerSelectionView>();
         }
     }
 }
