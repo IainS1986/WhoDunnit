@@ -6,6 +6,13 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True" 
              x:Class="WhoDunnit.Views.PlayerSelectionView"
-             BackgroundImage="Background.jpg"
+             BackgroundColor="{StaticResource Key=Primary50}"
              Title="Cluedo">
+    <Label
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="CenterAndExpand"
+        Text="{Binding TotalPlayers}"
+        Font="Large"
+        TextColor="#ee3563"
+        />
 </ContentPage>

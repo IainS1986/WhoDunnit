@@ -26,9 +26,11 @@ namespace WhoDunnit.Views
 
         private double m_logoY;
         private double m_buttonScale;
+        private double m_backgroundAlpha;
 
         private double m_logoOffY;
         private double m_buttonOffScale;
+        private double m_backgroundOffAlpha;
 
 		public MainView ()
 		{
@@ -53,9 +55,11 @@ namespace WhoDunnit.Views
             //Store off the UI positions we want to animate
             m_logoY = Logo.Y;
             m_buttonScale = NewGameButton.Scale;
+            m_backgroundAlpha = 1;
             
             m_logoOffY = -Logo.Height;
             m_buttonOffScale = 0;
+            m_backgroundOffAlpha = 0;
 
             //Animate in
             if (CurrentAnimState == AnimationStage.None)
@@ -84,7 +88,7 @@ namespace WhoDunnit.Views
             CurrentAnimState = AnimationStage.Out;
 
             //Bounce out the UI
-            await AnimateUI(m_logoOffY, m_buttonOffScale, Easing.SinIn);
+            await AnimateUI(m_logoOffY, m_buttonOffScale, m_backgroundOffAlpha, Easing.SinIn);
 
             var vm = BindingContext as MainViewModel;
             if(vm != null)
@@ -100,22 +104,23 @@ namespace WhoDunnit.Views
 
             CurrentAnimState = AnimationStage.In;
 
-            await AnimateUI(m_logoY, m_buttonScale, Easing.SinOut);
+            await AnimateUI(m_logoY, m_buttonScale, m_backgroundAlpha, Easing.SinOut);
         }
 
-        private async Task AnimateUI(double toLogoY, double toButtonScale, Easing easing)
+        private async Task AnimateUI(double toLogoY, double toButtonScale, double toAlpha, Easing easing)
         {
             const int AnimLength = 250;
 
             double logoy_target = toLogoY - Logo.Y;
 
+            var backgroundanim = Background.FadeTo(toAlpha, AnimLength + (AnimLength / 2));
             var logoanim = Logo.TranslateTo(0, logoy_target, AnimLength, easing);
             await Task.Delay(AnimLength / 2);
-            //var buttonanim = NewGameButton.TranslateTo(0, buttony_target, AnimLength, easing);
             var buttonanim = NewGameButton.ScaleTo(toButtonScale, AnimLength, easing);
 
             await logoanim;
             await buttonanim;
+            await backgroundanim;
         }
         
     }

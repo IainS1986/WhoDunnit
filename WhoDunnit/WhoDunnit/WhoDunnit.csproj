@@ -23,4 +23,8 @@
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Values\" />
+  </ItemGroup>
 </Project>

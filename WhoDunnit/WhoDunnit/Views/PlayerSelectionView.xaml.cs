@@ -35,8 +35,7 @@ namespace WhoDunnit.Views
                 return true;
             }
 
-            return false;
-            //return base.OnBackButtonPressed();
+            return base.OnBackButtonPressed();
         }
     }
 }

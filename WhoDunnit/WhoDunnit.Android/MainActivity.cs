@@ -19,7 +19,10 @@ using WhoDunnit.Views;
 
 namespace WhoDunnit.Droid
 {
-    [Activity(Label = "WhoDunnit", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "WhoDunnit",
+        Icon = "@drawable/icon",
+        Theme = "@style/MainTheme",
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
