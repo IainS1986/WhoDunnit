@@ -6,7 +6,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True" 
              x:Class="WhoDunnit.Views.MainView"
-             BackgroundColor="{StaticResource Key=Primary50}"
+             BackgroundColor="{StaticResource Key=BackgroundCol}"
              Title="Cluedo">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -41,7 +41,7 @@
                 HeightRequest="100"
                 VerticalOptions="End"
                 HorizontalOptions="Center"
-                ButtonColor="{StaticResource Key=Primary700}"/>
+                ButtonColor="{StaticResource Key=PrimaryCol}"/>
         </StackLayout>
     </Grid>
 </ContentPage>
