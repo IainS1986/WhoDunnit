@@ -2,17 +2,44 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:WhoDunnit;assembly=WhoDunnit"
+             xmlns:cells="clr-namespace:WhoDunnit.Cells;assembly=WhoDunnit"
              xmlns:ncontrol="clr-namespace:NControl.Controls;assembly=NControl.Controls"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True" 
              x:Class="WhoDunnit.Views.PlayerSelectionView"
              BackgroundColor="{StaticResource Key=BackgroundCol}"
              Title="Cluedo">
-    <Label
-        VerticalOptions="CenterAndExpand"
-        HorizontalOptions="CenterAndExpand"
-        Text="{Binding TotalPlayers}"
-        Font="Large"
-        TextColor="{StaticResource Key=DarkTextCol}"
-        />
+    <ListView x:Name="PlayerList"
+        ItemsSource="{Binding Players}"
+        SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+        HasUnevenRows="true"
+        BackgroundColor="Transparent"
+        SeparatorVisibility="None"
+        >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <cells:PlayerCell>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Orientation="Vertical"
+                        BackgroundColor="White"
+                        Padding="20"
+                        Margin="4"
+                        >
+                        <Label 
+                            Text="{Binding Name}"
+                            Font="Large"
+                            TextColor="#ee3563"
+                            />
+                        <Label 
+                            Text="{Binding Description}"
+                            Font="Small"
+                            TextColor="Silver"
+                            />
+                    </StackLayout>
+                </cells:PlayerCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
