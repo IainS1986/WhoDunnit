@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 using WhoDunnit.Extensions;
 using Xamarin.Forms;
 
@@ -16,6 +17,11 @@ namespace WhoDunnit.ViewModels
         protected INavigationService NavigationService
         {
             get { return m_navigationService; }
+        }
+
+        public AppViewModel()
+        {
+
         }
 
         public AppViewModel(INavigationService navigationService)
@@ -33,6 +39,11 @@ namespace WhoDunnit.ViewModels
 
         public virtual void OnNavigatingTo(NavigationParameters parameters)
         {
+        }
+
+        public async Task<bool> OnBackButtonPressed()
+        {
+            return await NavigationService.GoBackAsync(animated: false);
         }
     }
 }

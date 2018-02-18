@@ -4,6 +4,7 @@ using Prism.Navigation;
 using Prism;
 using Prism.Ioc;
 using WhoDunnit.Views;
+using Xamarin.Forms;
 
 namespace WhoDunnit
 {
@@ -17,11 +18,11 @@ namespace WhoDunnit
         {
         }
 
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
             InitializeComponent();
         
-            NavigationService.NavigateAsync("MainView");
+            await NavigationService.NavigateAsync("Navigation/MainView");
         }
 
         protected override void OnStart ()
@@ -41,8 +42,16 @@ namespace WhoDunnit
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<NavigationPage>("Navigation");
             containerRegistry.RegisterForNavigation<MainView>();
             containerRegistry.RegisterForNavigation<PlayerSelectionView>();
+        }
+
+        public static Page GetMainPage()
+        {
+            // Replace the ExamplePage with whatever page is appropriate to start off your app
+            //  - Like your login page, or home screen, or whatever
+            return new NavigationPage(new MainView());
         }
     }
 }

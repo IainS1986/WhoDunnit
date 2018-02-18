@@ -6,20 +6,6 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True" 
              x:Class="WhoDunnit.Views.PlayerSelectionView"
-             BackgroundColor="White"
+             BackgroundImage="Background.jpg"
              Title="Cluedo">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Image Grid.Column="0"
-            Grid.Row="0"
-            Source="Background.jpg"
-            Aspect="AspectFill"
-            VerticalOptions="Fill"
-            HorizontalOptions="Fill"/>
-    </Grid>
 </ContentPage>

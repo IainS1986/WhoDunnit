@@ -30,6 +30,7 @@ namespace WhoDunnit.Droid
             NControlViewRenderer.Init();
             NControls.Init();
             LoadApplication(new App(new AndroidInitializer()));
+            //SetPage(App.GetMainPage());
 
             if (ActionBar != null)
                 ActionBar.SetIcon(new ColorDrawable(Color.Transparent));

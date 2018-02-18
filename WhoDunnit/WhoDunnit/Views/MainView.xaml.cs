@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace WhoDunnit.Views
 {
 	public partial class MainView : ContentPage
-	{
+    {
         private enum AnimationStage
         {
             None,
